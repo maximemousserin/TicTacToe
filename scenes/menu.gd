@@ -9,7 +9,7 @@ func initSignals() -> void:
 	
 func _on_btn_jouer_pressed() -> void:
 	get_tree().get_current_scene().queue_free()
-	get_tree().change_scene("res://main.tscn")
+	get_tree().change_scene("res://scenes/game.tscn")
 	
 func _on_btn_quitter_pressed() -> void:
 	get_tree().quit()

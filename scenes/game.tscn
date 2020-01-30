@@ -1,0 +1,129 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scenes/game.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/background.png" type="Texture" id=2]
+[ext_resource path="res://widgets/case.tscn" type="PackedScene" id=3]
+[ext_resource path="res://UI/btn_menu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/fonts/MING.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://widgets/player_placeholder.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/musics/Puzzle_Dreams.ogg" type="AudioStream" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+font_data = ExtResource( 5 )
+
+[node name="Main" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Board" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="background" type="Sprite" parent="Board"]
+position = Vector2( 0, 189.061 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="cases" type="Node" parent="Board"]
+
+[node name="case01" parent="Board/cases" instance=ExtResource( 3 )]
+margin_left = 28.0
+margin_top = 225.791
+margin_right = 230.0
+margin_bottom = 421.791
+rect_scale = Vector2( 0.6, 0.6 )
+label = "case01"
+
+[node name="case02" parent="Board/cases" instance=ExtResource( 3 )]
+margin_left = 180.0
+margin_top = 224.152
+margin_right = 382.0
+margin_bottom = 420.152
+rect_scale = Vector2( 0.6, 0.6 )
+label = "case02"
+
+[node name="case03" parent="Board/cases" instance=ExtResource( 3 )]
+margin_left = 328.0
+margin_top = 224.512
+margin_right = 530.0
+margin_bottom = 420.512
+rect_scale = Vector2( 0.6, 0.6 )
+label = "case03"
+
+[node name="case04" parent="Board/cases" instance=ExtResource( 3 )]
+margin_left = 28.0
+margin_top = 369.991
+margin_right = 230.0
+margin_bottom = 565.991
+rect_scale = Vector2( 0.6, 0.6 )
+label = "case04"
+
+[node name="case05" parent="Board/cases" instance=ExtResource( 3 )]
+margin_left = 180.0
+margin_top = 370.27
+margin_right = 382.0
+margin_bottom = 566.27
+rect_scale = Vector2( 0.6, 0.6 )
+label = "case05"
+
+[node name="case06" parent="Board/cases" instance=ExtResource( 3 )]
+margin_left = 328.0
+margin_top = 370.189
+margin_right = 530.0
+margin_bottom = 566.189
+rect_scale = Vector2( 0.6, 0.6 )
+label = "case06"
+
+[node name="case07" parent="Board/cases" instance=ExtResource( 3 )]
+margin_left = 28.0
+margin_top = 518.272
+margin_right = 230.0
+margin_bottom = 714.272
+rect_scale = Vector2( 0.6, 0.6 )
+label = "case07"
+
+[node name="case08" parent="Board/cases" instance=ExtResource( 3 )]
+margin_left = 180.0
+margin_top = 516.83
+margin_right = 382.0
+margin_bottom = 712.83
+rect_scale = Vector2( 0.6, 0.6 )
+label = "case08"
+
+[node name="case09" parent="Board/cases" instance=ExtResource( 3 )]
+margin_left = 328.0
+margin_top = 516.83
+margin_right = 530.0
+margin_bottom = 712.83
+rect_scale = Vector2( 0.6, 0.6 )
+label = "case09"
+
+[node name="UI" type="Node" parent="."]
+
+[node name="btn_menu" parent="UI" instance=ExtResource( 4 )]
+margin_left = 417.678
+margin_top = 3.61013
+margin_right = 84.6785
+margin_bottom = -648.39
+rect_scale = Vector2( 0.4, 0.4 )
+
+[node name="titre" type="Label" parent="UI"]
+margin_left = 78.4985
+margin_top = 74.7335
+margin_right = 413.499
+margin_bottom = 174.733
+custom_fonts/font = SubResource( 1 )
+text = "Tic Tac Toe"
+
+[node name="player_name" parent="UI" instance=ExtResource( 6 )]
+position = Vector2( 84.411, 671.215 )
+playerName = "Humain"
+
+[node name="cpu_name" parent="UI" instance=ExtResource( 6 )]
+position = Vector2( 84.411, 721.031 )
+playerName = "CPU"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -15.0
+autoplay = true
